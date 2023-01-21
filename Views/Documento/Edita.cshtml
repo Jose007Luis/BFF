@@ -1,0 +1,46 @@
+﻿@model DocumentoBean
+@{
+    ViewData["Title"] = "Edita";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        Crear Persona
+    </div>
+    <div class="card-body">
+
+
+        <form asp-action="Editar" asp-controller="Documento" method="post">
+            <input asp-for="idOrdenDocumento" type="hidden" class="form-control">
+
+            <div class="mb-3">
+                <label class="form-label">Documento</label>
+                <input asp-for="documento" type="text" class="form-control">
+                <span asp-validation-for="documento" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">id Cliente</label>
+                <input asp-for="idCliente" type="text" class="form-control">
+                <span asp-validation-for="idCliente" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">id Producto</label>
+                <input asp-for="idProducto" type="text" class="form-control">
+                <span asp-validation-for="idProducto" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+
+                @*@Html.DropDownListFor(model => model.IdSexo, ViewBag.listSexo as SelectList, "--Seleccione Sexo--", new {@IdSexo="DropDwn", @class="farm-control"})*@
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a asp-action="allDocumento" asp-controller="Documento" class="btn btn-warning">Volver a la lista</a>
+        </form>
+
+
+    </div>
+</div>
+
+
+

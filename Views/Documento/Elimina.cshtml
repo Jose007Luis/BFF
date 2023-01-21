@@ -1,0 +1,28 @@
+﻿@model DocumentoBean
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Eliminar Documento
+    </div>
+    <div class="card-body">
+
+
+        <form asp-action="Eliminar" asp-controller="Documento" method="post">
+
+            <input asp-for="idOrdenDocumento" type="hidden" class="form-control">
+
+            <div class="alert alert-danger" role="alert">
+                ¿Desea eliminar el documento : @Html.DisplayTextFor(m => m.documento) ?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Elimnar</button>
+            <a asp-action="allDocumento" asp-controller="Documento" class="btn btn-warning">Volver a la lista</a>
+        </form>
+
+
+    </div>
+</div>
